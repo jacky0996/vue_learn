@@ -1,22 +1,27 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <div class="leftMenu">
+          <RouterLink to="/">G8FANS</RouterLink>
+        </div>
+        <div class="rightMenu">
+          <RouterLink to="/about">全站貼文</RouterLink>
+          <div class="dropdown">
+            <RouterLink to="/about">登入</RouterLink>
+            <RouterLink to="/about">註冊</RouterLink>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
-
   <RouterView />
 </template>
 
@@ -36,6 +41,7 @@ nav {
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
+  display: flex;
 }
 
 nav a.router-link-exact-active {
@@ -50,15 +56,32 @@ nav a {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
+  border: 1px solid;
+  border-radius: 20px;
+  margin-right: 16px;
 }
 
-nav a:first-of-type {
-  border: 0;
+.leftMenu {
+  display: flex;
+  position: relative;
+  align-items: center;
 }
-
+.leftMenu a {
+  border: none;
+  margin-right: none;
+  font-size: 36px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  letter-spacing: 2px;
+}
+.rightMenu {
+  display: flex;
+  position: relative;
+  left: 80%;
+  align-items: center;
+}
 @media (min-width: 1024px) {
   header {
-    display: flex;
+    /* display: flex; */
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
   }
