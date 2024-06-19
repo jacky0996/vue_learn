@@ -13,10 +13,10 @@ import { RouterLink, RouterView } from 'vue-router'
           <RouterLink to="/">G8FANS</RouterLink>
         </div>
         <div class="rightMenu">
-          <RouterLink to="/about">全站貼文</RouterLink>
+          <RouterLink to="/">全站貼文</RouterLink>
           <div class="dropdown">
-            <RouterLink to="/about">登入</RouterLink>
-            <RouterLink to="/about">註冊</RouterLink>
+            <RouterLink to="/login">登入</RouterLink>
+            <RouterLink to="/register">註冊</RouterLink>
           </div>
         </div>
       </nav>
@@ -75,7 +75,7 @@ nav a {
 }
 .rightMenu {
   display: flex;
-  position: relative;
+  position: fixed;
   left: 80%;
   align-items: center;
 }
